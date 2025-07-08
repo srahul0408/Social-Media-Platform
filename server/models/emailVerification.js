@@ -10,3 +10,4 @@ const emailVerificationSchema = Schema({
 const Verification = mongoose.model("Verification", emailVerificationSchema);
 
 export default Verification;
+
