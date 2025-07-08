@@ -6,6 +6,7 @@ import bodyParser from "body-parser";
 
 // security packages
 import helmet from "helmet";
+import dbConnection from "./dbConfig/index.js";
 
 dotenv.config();
 
@@ -13,6 +14,7 @@ const app = express();
 
 const PORT = process.env.PORT || 8800;
 
+dbConnection();
 
 app.use(helmet());
 app.use(cors());
