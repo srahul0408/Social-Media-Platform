@@ -1,11 +1,11 @@
 import Users from "../models/userModel.js";
 import { hashString } from "../utils/index.js";
-
+import { sendVerificationEmail } from "../utils/sendEmail.js";
 
 export const register = async(req, res, next) => {
     const { firstName, lastName, email, password } = req.body;
 
-
+    // validate fields
     if(!(firstName || lastName || email || password)){
         next("Provide Required Fields!");
         return;
