@@ -7,6 +7,7 @@ import bodyParser from "body-parser";
 // security packages
 import helmet from "helmet";
 import dbConnection from "./dbConfig/index.js";
+import errorMiddleware from "./middleware/errorMiddleware.js";
 
 dotenv.config();
 
@@ -25,6 +26,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(morgan("dev"));
 
+
+// error middleware
+app.use(errorMiddleware);
 
 
 app.listen(PORT, () => {
